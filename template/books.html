@@ -1,0 +1,30 @@
+﻿<div class="nav-books">
+    <input type="text" class="form-control search" ng-model="search" placeholder="Найти книгу" ng-change="searchBook(search)"/>
+    <button ng-show="book" class="btn btn-info" ng-click="goToAddBook()">Добавить книгу</button>
+</div>
+
+<h1 ng-show="book">Книги</h1>
+<div ng-show="book" class="books">
+    <div class="book" ng-repeat=" item in contextBook">
+        <img src="../img/img-book.jpg" alt="poster-book"/>
+        <h3>{{item.nameBook}}</h3>
+        <h4>автор: {{item.authorBook}}</h4>
+        <p>жанр: {{item.ganreBook}}</p>
+        <p>кол-во страниц: {{item.amountPages}}</p>
+        <button class="btn btn-primary" ng-click="goToEditBook(item)">Изменить</button>
+        <button class="btn btn-danger" ng-click="removeBook(item.id)">Удалить</button>
+    </div>   
+</div>
+
+<h1 ng-hide="book">Поиск книги по названию</h1>
+<div ng-hide="book" class="books">
+    <div class="book" ng-repeat=" item in viweSearch">
+        <img src="../img/img-book.jpg" alt="poster-book" />
+        <h3>{{item.nameBook}}</h3>
+        <h4>автор: {{item.authorBook}}</h4>
+        <p>жанр: {{item.ganreBook}}</p>
+        <p>кол-во страниц: {{item.amountPages}}</p>
+        <button class="btn btn-primary" ng-click="goToEditBook(item)">Изменить</button>
+        <button class="btn btn-danger" ng-click="removeBook(item.id)">Удалить</button>
+    </div>
+</div>

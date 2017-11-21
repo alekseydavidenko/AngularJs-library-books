@@ -1,0 +1,190 @@
+﻿@import url('reset.css');
+@import url('normalize.css');
+
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-size: 12px;
+    color: #000;
+    width: 100%;
+    height: 100%;
+}
+a, a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+/*wrapper*/
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+
+/*хедер*/
+.header {
+    background-color: #000;
+    position: fixed !important;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+}
+header {
+    padding-left: 0;
+    color: #fff;
+    display: flex;  
+}
+header h1 {
+    margin-right: 30px;
+    color: #fff;
+}
+header a h1 {
+    color: #fff;
+}
+header ul {
+    display: flex;
+}
+header ul li {
+    margin-top: 8px;
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+header ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+} 
+
+/*Контент*/
+
+.content {
+    padding: 70px 15px 50px;
+}
+
+/*Книги*/
+
+.nav-books {
+    display: flex;
+    margin-bottom: 40px;
+}
+.search {
+    width: 250px;
+    background: #000 url(../img/search.png) no-repeat right 10px center;
+    color: #fff;
+    margin-right: 30px;
+}
+.search::-webkit-input-placeholder {
+    color: #fff;
+}
+.books {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    
+}
+.book {
+    min-width: 275px;
+    height: 370px;
+    margin-top: 15px;
+    position: relative;
+    padding: 14px;
+    border: 1px solid rgba(0,0,0,.1);
+}
+.book:hover {
+    box-shadow: 5px 5px 10px #888;
+}
+.book img {
+    min-width: 255px;
+    min-height: 190px;
+    margin-bottom: 15px;
+}
+.book h3 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+}
+.book h4 {
+    margin-bottom: 10px;
+}
+.book p {
+    font-style: italic;
+}
+.book button {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+.book button.btn-danger {
+    left: 110px;
+}
+.error-author {
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+}
+
+/*Футер*/
+
+footer {
+    height: 50px;
+    margin-top: -50px;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 9999;
+}
+
+/*Автор*/
+
+.add-author {
+    margin: 10px 0;
+}
+.error-remove-authors {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0px 0px 20px #888;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+}
+.error-remove-authors p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    margin: 100px 15px 30px;
+    
+}
+
+/*Форма*/
+form .ng-invalid-required.ng-dirty {
+    background-color: #f1b4cc;
+}
+
+form .ng-invalid-email.ng-dirty {
+    background-color: #f57988;
+}
+
+form .ng-invalid.ng-dirty {
+    background-color: #f57988;
+}
+
+form .ng-valid.ng-dirty {
+    background-color: #bcf3b1;
+}
+.error {
+    color: #dd2a40;
+    font-weight: bold;
+    margin: 5px;
+}

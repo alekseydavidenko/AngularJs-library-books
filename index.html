@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Библиотека</title>
+    <base href="/Library">
+    <link href="css/libs/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/libs/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/libs/jquery-ui.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/libs/jquery-3.2.1.min.js"></script>
+    <script src="js/libs/jquery-ui.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script>
+    <script src="js/libs/angular-locale_ru.js"></script>
+    <script src="js/models.js"></script>
+    <script src="js/app.js"></script>
+
+</head>
+<body ng-controller="defaultCtrl">
+    <section class="wrapper">
+        <section class="header">
+            <header class="container">
+                <a href="index.html"><h1>Бибилиотека</h1></a>
+                <ul>
+                    <li ng-click="goToAuthors()">Авторы</li>
+                    <li ng-click="goToBooks()">Книги</li>
+                </ul>
+            </header>
+        </section>        
+        <section class="container content">                       
+            <ng-view></ng-view>
+        </section>
+    </section>
+    <footer>
+        <p class="container">2017 &copy; Библиотека</p>
+    </footer> 
+</body>
+</html>

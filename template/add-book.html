@@ -1,0 +1,37 @@
+﻿<h1>Добавление новой книги</h1>
+<form novalidate ng-controller="addBookCtrl" name="addBook" ng-submit="addNewBook(addBook.$valid, newBook)">
+    <div ng-show="show" class="form-group">                
+        <select class="" name="author" ng-model="dataSelect" ng-change="changeSelectedItem(dataSelect)" required>
+            <option ng-repeat="item in authorForSelect">{{item.author}}</option>
+        </select>
+        <label>Выбирите автора</label>
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(addBook.author.$error)}}
+        </div>
+    </div>
+    <div ng-show="show" class="form-group">
+        <label>Название Книги</label>
+        <input autofocus type="text" class="form-control" name="nameBook" ng-model="newBook.nameBook" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(addBook.nameBook.$error)}}
+        </div>
+    </div>  
+    <div ng-show="show" class="form-group">
+        <label>Жанр</label>
+        <input autofocus type="text" class="form-control" name="ganreBook" ng-model="newBook.ganreBook" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(addBook.ganreBook.$error)}}
+        </div>
+    </div>
+    <div ng-show="show" class="form-group">
+        <label>Количество страниц</label>
+        <input autofocus type="number" class="form-control" name="amountPages" ng-model="newBook.amountPages" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(addBook.amountPages.$error)}}
+        </div>
+    </div>
+    <button ng-show="show" type="submit" class="btn btn-success">Сохранить</button>
+    <button ng-show="show" class="btn btn-warning" ng-click="goToBooks()">Отменить</button> 
+    <p ng-hide="show" class="error-author">Для добавление книг необходимо добавить автора</p>
+</form>
+

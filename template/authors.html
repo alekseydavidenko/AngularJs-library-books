@@ -1,0 +1,30 @@
+﻿<h1>Авторы</h1>
+<button class="btn btn-info add-author" ng-click="goToAddAuthor()">Добавить автора</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Ф.И.О.</td>
+            <td>Дата рождения</td>
+            <td>Управление</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in contextAuthor">
+            <td ng-cloak>{{item.firstName}} {{item.fatherName}} {{item.lastName}}</td>
+            <td ng-cloak>{{item.date}}</td>
+            <td>
+                <button class="btn btn-primary" ng-click="goToEditAuthor(item)">Редактировать</button>
+                <button class="btn btn-danger" ng-click="checkRemoveAuthor(item.id)">Удалить</button>                
+            </td>
+        </tr>    
+    </tbody>
+</table>
+<div ng-show="errorRemoveAuthors" class="error-remove-authors">
+    <p>У данного автора есть книги, при удалении автора все его книги будут удалены!</p>
+    <button class="btn btn-danger" ng-click="removeAuthor(idRemoveAuthor)">Продолжить</button>
+    <button class="btn btn-success" ng-click="notRemoveAuthor()">Отменить удаление</button>
+</div>
+
+
+
+

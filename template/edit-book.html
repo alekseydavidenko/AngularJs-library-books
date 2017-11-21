@@ -1,0 +1,26 @@
+﻿<h1>Редактирование книги</h1>
+<form novalidate ng-controller="editBookCtrl" name="editBook" ng-submit="editB(editBook.$valid, item)">    
+    <div class="form-group">
+        <label>Название Книги</label>
+        <input autofocus type="text" class="form-control" name="nameBook" ng-model="item.nameBook" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(editBook.nameBook.$error)}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Жанр</label>
+        <input autofocus type="text" class="form-control" name="ganreBook" ng-model="item.ganreBook" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(editBook.ganreBook.$error)}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Количество страниц</label>
+        <input autofocus type="number" class="form-control" name="amountPages" ng-model="item.amountPages" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(editBook.amountPages.$error)}}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Сохранить</button>
+    <button class="btn btn-warning" ng-click="goToBooks()">Отменить</button>
+</form>

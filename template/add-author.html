@@ -1,0 +1,33 @@
+﻿<h1 class="container">Добавление нового автора</h1>
+<form novalidate ng-controller="addAuthorCtrl" name="addAuthor" ng-submit="addNewAuthor(addAuthor.$valid, newAuthor)">    
+    <div class="form-group">
+        <label>Имя</label>
+        <input autofocus type="text" class="form-control" name="firstName" ng-model="newAuthor.firstName" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(addAuthor.firstName.$error)}}
+        </div>
+    </div>    
+    <div class="form-group">
+        <label>Отчество</label>
+        <input type="text" class="form-control" name="fatherName" ng-model="newAuthor.fatherName" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(addAuthor.fatherName.$error)}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Фамилия</label>
+        <input type="text" class="form-control" name="lastName" ng-model="newAuthor.lastName" required />
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(addAuthor.lastName.$error)}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Дата</label>
+        <input type="text" class="form-control" name="date" ng-model="newAuthor.date" jq-datepicker required/>
+        <div class="error" ng-show="showError" ng-cloak>
+            {{getError(addAuthor.date.$error)}}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Сохранить</button>
+    <button class="btn btn-warning" ng-click="goToAuthors()">Отменить</button>
+</form>
